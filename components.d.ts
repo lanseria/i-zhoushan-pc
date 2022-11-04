@@ -77,6 +77,7 @@ declare module '@vue/runtime-core' {
     IconDelete: typeof import('@arco-design/web-vue/es/icon')['IconDelete']
     IconDesktop: typeof import('@arco-design/web-vue/es/icon')['IconDesktop']
     IconDownload: typeof import('@arco-design/web-vue/es/icon')['IconDownload']
+    IconEdit: typeof import('@arco-design/web-vue/es/icon')['IconEdit']
     IconExport: typeof import('@arco-design/web-vue/es/icon')['IconExport']
     IconFaceSmileFill: typeof import('@arco-design/web-vue/es/icon')['IconFaceSmileFill']
     IconFullscreen: typeof import('@arco-design/web-vue/es/icon')['IconFullscreen']
