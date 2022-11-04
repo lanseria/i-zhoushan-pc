@@ -1,7 +1,7 @@
 import axios from 'axios'
-import type { PaginationParams, PaginationRecordsRes } from '~/types/global'
+import type { PaginationParams } from '~/types/global'
 
-export const querySubscribePage = (params: SubscribeParams): Promise<PaginationRecordsRes<SubscribeRecord>> => {
+export const querySubscribePage = (params: SubscribeParams) => {
   return axios.request({
     url: '/pc/sample/users/page',
     method: 'GET',

@@ -10,8 +10,6 @@ import '~/views/dashboard/monitor/mock'
 
 import '~/views/account/category/mock'
 
-import '~/views/account/material/mock'
-
 import '~/views/course/courses/mock'
 
 Mock.setup({

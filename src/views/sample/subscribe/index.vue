@@ -18,8 +18,8 @@ const {
   // fetchData,
   onPageChange,
   onPageSizeChange,
-  // reset,
-  // search,
+  reset,
+  search,
 } = useTablePagination<SubscribeParams, SubscribeQuery, SubscribeRecord>(querySubscribePage, initSubscribeQueryForm, true)
 </script>
 
@@ -30,19 +30,19 @@ export default {
 </script>
 
 <template>
-  <LayoutContainer :items="['采样', '订阅管理']" title="订阅管理">
+  <LayoutContainer>
     <ARow>
       <ACol :flex="1" />
       <ADivider class="h-10" direction="vertical" />
       <ACol flex="180px" class="text-right">
         <a-space>
-          <a-button type="primary">
+          <a-button type="primary" @click="search">
             <template #icon>
               <icon-search />
             </template>
             查询
           </a-button>
-          <a-button>
+          <a-button @click="reset">
             <template #icon>
               <icon-refresh />
             </template>
@@ -62,7 +62,7 @@ export default {
             <template #icon>
               <IconPlus />
             </template>
-            添加计划
+            添加订阅
           </AButton>
         </ASpace>
       </ACol>
