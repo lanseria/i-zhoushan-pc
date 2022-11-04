@@ -46,7 +46,6 @@ const handleSubmit = async ({
       loginConfig.value.password = rememberPassword ? password : ''
     }
     catch (err) {
-      console.log(err)
       errorMessage.value = (err as Error).message
     }
     finally {

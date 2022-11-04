@@ -36,7 +36,7 @@ axios.interceptors.request.use(
 // add response interceptors
 axios.interceptors.response.use(
   (response) => {
-    const res = response.data
+    const res = response
     return res
   },
   (error) => {

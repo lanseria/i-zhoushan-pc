@@ -2,12 +2,13 @@ import type { TableRowSelection } from '@arco-design/web-vue'
 // import type { AxiosResponse } from 'axios'
 import type { Ref } from 'vue'
 import { isEmpty } from 'lodash-es'
+import type { AxiosResponse } from 'axios'
 import type { PaginationRecordsRes } from '~/types/global'
 import { initBasePagination } from '~/utils/pagination'
 
 const basePagination = initBasePagination()
 
-export const useTablePagination = <P, FM, RD>(queryPage: (params: P) => Promise<PaginationRecordsRes<RD>>, initQueryForm: any, usePageAlive = false) => {
+export const useTablePagination = <P, FM, RD>(queryPage: (params: P) => Promise<AxiosResponse<PaginationRecordsRes<RD>>>, initQueryForm: any, usePageAlive = false) => {
   const { loading, setLoading } = useLoading(true)
   const route = useRoute()
   const router = useRouter()
@@ -47,8 +48,7 @@ export const useTablePagination = <P, FM, RD>(queryPage: (params: P) => Promise<
           },
         })
       }
-      const data = await queryPage(params)
-      console.log(data)
+      const { data } = await queryPage(params)
       renderData.value = data.records
       pagination.current = params.current
       pagination.size = params.size
