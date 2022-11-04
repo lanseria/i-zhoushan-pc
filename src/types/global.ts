@@ -24,9 +24,10 @@ export interface PostData {
 }
 
 export interface Pagination {
+  total: number
+  size: number
+  pages?: number
   current: number
-  pageSize: number
-  total?: number
 }
 
 export type TimeRanger = [string, string]
@@ -34,4 +35,13 @@ export type TimeRanger = [string, string]
 export interface GeneralChart {
   xAxis: string[]
   data: Array<{ name: string; value: number[] }>
+}
+
+export interface PaginationRecordsRes<T> extends Pagination {
+  records: T[]
+}
+
+export interface PaginationParams {
+  current: number
+  size: number
 }

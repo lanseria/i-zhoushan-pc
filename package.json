@@ -1,17 +1,17 @@
 {
-  "name": "arco-uno-template",
+  "name": "i-zhoushan-pc",
   "version": "1.0.0",
   "private": true,
   "description": "template of arco.design and uno-css",
   "author": "Lanseria",
   "license": "MIT",
-  "homepage": "https://github.com/Lanseria/arco-uno-template#readme",
+  "homepage": "https://github.com/Lanseria/i-zhoushan-pc#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lanseria/arco-uno-template.git"
+    "url": "git+https://github.com/Lanseria/i-zhoushan-pc.git"
   },
   "bugs": {
-    "url": "https://github.com/Lanseria/arco-uno-template/issues"
+    "url": "https://github.com/Lanseria/i-zhoushan-pc/issues"
   },
   "keywords": [],
   "scripts": {
@@ -39,7 +39,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.29.2",
+    "@antfu/eslint-config": "^0.29.3",
     "@iconify-json/carbon": "^1.1.9",
     "@types/crypto-js": "^4.1.1",
     "@types/lodash-es": "^4.17.6",
