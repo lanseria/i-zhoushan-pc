@@ -23,7 +23,7 @@
     "up": "taze major -I"
   },
   "dependencies": {
-    "@arco-design/web-vue": "^2.38.0",
+    "@arco-design/web-vue": "^2.38.1",
     "@vueuse/core": "^9.4.0",
     "axios": "^1.1.3",
     "crypto-js": "^4.1.1",
@@ -49,7 +49,7 @@
     "@unocss/reset": "^0.46.3",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vitejs/plugin-vue-jsx": "^2.1.0",
-    "eslint": "^8.26.0",
+    "eslint": "^8.27.0",
     "less": "^4.1.3",
     "mockjs": "^1.1.0",
     "taze": "^0.8.3",
