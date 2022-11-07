@@ -22,6 +22,16 @@ const SAMPLE: AppRouteRecordRaw = {
         roles: ['*'],
       },
     },
+    {
+      path: 'points',
+      name: 'Points',
+      component: () => import('~/views/sample/points/index.vue'),
+      meta: {
+        locale: '点位管理',
+        requiresAuth: true,
+        roles: ['*'],
+      },
+    },
   ],
 }
 
