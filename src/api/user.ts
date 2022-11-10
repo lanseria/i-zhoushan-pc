@@ -11,17 +11,17 @@ export interface LoginRes {
   token: string
 }
 export function login(data: LoginData) {
-  return axios.post<LoginRes>('/pc/user/login', data)
+  return axios.post<LoginRes>('/user/login', data)
 }
 
 export function logout() {
-  return axios.post<LoginRes>('/pc/user/logout')
+  return axios.post<LoginRes>('/user/logout')
 }
 
 export function getUserInfo() {
-  return axios.post<UserState>('/pc/user/info')
+  return axios.post<UserState>('/user/info')
 }
 
 export function getMenuList() {
-  return axios.post<RouteRecordNormalized[]>('/pc/user/menu')
+  return axios.post<RouteRecordNormalized[]>('/user/menu')
 }

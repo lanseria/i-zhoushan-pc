@@ -3,7 +3,7 @@ import type { PaginationParams } from '~/types/global'
 // 用户订阅
 export const querySubscribePage = (params: SubscribeParams) => {
   return axios.request({
-    url: '/pc/sample/users/page',
+    url: '/sample/users/page',
     method: 'GET',
     params,
   })
@@ -26,7 +26,7 @@ export const initSubscribeQueryForm = (): SubscribeRecord => {
 // 采样点
 export const querySamplePointPage = (params: SamplePointParams) => {
   return axios.request({
-    url: '/pc/sample/points/page',
+    url: '/sample/points/page',
     method: 'GET',
     params,
   })

@@ -3,7 +3,7 @@ import type { PaginationParams } from '~/types/global'
 
 export const queryFilePage = (params: FileParams) => {
   return axios.request({
-    url: '/pc/file/page',
+    url: '/file/page',
     method: 'GET',
     params,
   })
