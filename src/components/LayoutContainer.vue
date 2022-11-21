@@ -42,7 +42,7 @@ const onBack = () => {
 </script>
 
 <template>
-  <div class="px-5 pb-5">
+  <div class="px-5 pb-5 h-full">
     <Breadcrumb :items="items" />
     <ACard v-if="showCard" class="general-card">
       <template #title>

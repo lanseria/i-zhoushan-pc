@@ -32,6 +32,16 @@ const SAMPLE: AppRouteRecordRaw = {
         roles: ['*'],
       },
     },
+    {
+      path: 'points-map',
+      name: 'PointsMap',
+      component: () => import('~/views/sample/points-map/index.vue'),
+      meta: {
+        locale: '点位地图',
+        requiresAuth: true,
+        roles: ['*'],
+      },
+    },
   ],
 }
 
