@@ -28,7 +28,7 @@ specifiers:
   mitt: ^3.0.0
   mockjs: ^1.1.0
   nprogress: ^0.2.0
-  pinia: ^2.0.25
+  pinia: ^2.0.26
   query-string: ^7.1.1
   taze: ^0.8.4
   typescript: ^4.9.3
@@ -56,7 +56,7 @@ dependencies:
   mapbox-gl: 2.11.0
   mitt: 3.0.0
   nprogress: 0.2.0
-  pinia: 2.0.25_mgnvym7yiazkylwwogi5r767ue
+  pinia: 2.0.26_mgnvym7yiazkylwwogi5r767ue
   query-string: 7.1.1
   vue: 3.2.45
   vue-echarts: 6.2.3_echarts@5.4.0+vue@3.2.45
@@ -4779,8 +4779,8 @@ packages:
     dev: true
     optional: true
 
-  /pinia/2.0.25_mgnvym7yiazkylwwogi5r767ue:
-    resolution: {integrity: sha512-3reAkjJ6bW2D5hZKRMS0c9rUbHVlsVyZd037xO0PJr2AuF/09RRSBnFLlJgmHF4Jx6dEoW/jZBOHTushY7IMlw==}
+  /pinia/2.0.26_mgnvym7yiazkylwwogi5r767ue:
+    resolution: {integrity: sha512-tSxZNUcMGxQOvKZRjPKXxd2+/2NZhRF/CoYVE/+K6uE/Z3v1Oi4fcQFpxu5nMB1dCchjXUZ+lz0tBxV5ntwmQQ==}
     peerDependencies:
       '@vue/composition-api': ^1.4.0
       typescript: '>=4.4.4'
