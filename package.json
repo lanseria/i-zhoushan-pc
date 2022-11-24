@@ -25,6 +25,7 @@
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@antv/l7": "^2.11.1",
+    "@antv/l7-draw": "^3.0.9",
     "@antv/l7-maps": "^2.11.1",
     "@arco-design/web-vue": "^2.39.0",
     "@mapbox/mapbox-gl-language": "^1.0.0",
