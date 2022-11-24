@@ -2,19 +2,26 @@
 import mapboxgl from 'mapbox-gl'
 import MapboxLanguage from '@mapbox/mapbox-gl-language'
 // import AMapLoader from '@amap/amap-jsapi-loader'
-import { PointLayer, Scene } from '@antv/l7'
+import { LayerPopup, PointLayer, Scene } from '@antv/l7'
 import { Mapbox } from '@antv/l7-maps'
 import { querySamplePointMap } from '~/api/sample'
 const mapRef = shallowRef<mapboxgl.Map>()
 const sceneRef = shallowRef<Scene>()
 
+let samplePointData: any[] = []
+
 const fetchData = async () => {
   const res = await querySamplePointMap()
+  samplePointData = res.data
+}
+
+const loadPointText = () => {
   const pointLayer = new PointLayer({})
-    .source(res.data)
+    .source(samplePointData)
     .shape('orgName', 'text')
     .size(12)
     .style({
+      opacity: 0.5,
       textAnchor: 'center', // 文本相对锚点的位置 center|left|right|top|bottom|top-left
       textOffset: [0, 0], // 文本相对锚点的偏移量 [水平, 垂直]
       spacing: 2, // 字符间距
@@ -27,7 +34,43 @@ const fetchData = async () => {
   sceneRef.value && sceneRef.value.addLayer(pointLayer)
 }
 
-onMounted(() => {
+const loadPointPopup = () => {
+  const pointLayer = new PointLayer({})
+    .source(samplePointData)
+    .shape('circle')
+    .size(7)
+    .color('#5B8FF9')
+    .active(true)
+    .style({
+      opacity: 0.3,
+      strokeWidth: 1,
+    })
+
+  sceneRef.value && sceneRef.value.addLayer(pointLayer)
+
+  const layerPopup = new LayerPopup({
+    className: 'text-dark',
+    items: [
+      {
+        layer: pointLayer,
+        fields: [
+          {
+            field: 'orgName',
+            formatField: () => '名称',
+          }, {
+            field: 'workTime',
+            formatField: () => '工作时间',
+          },
+        ],
+      },
+    ],
+  })
+
+  sceneRef.value && sceneRef.value.addPopup(layerPopup)
+}
+
+onMounted(async () => {
+  await fetchData()
   mapboxgl.accessToken = 'pk.eyJ1IjoibGFuc2VyaWEiLCJhIjoiY2tzNDE4MDI0MHg5ZjJvcndtZzF4YTB6aCJ9.5k-y1Bx3km5MAOp4KVpb9g'
   mapRef.value = new mapboxgl.Map({
     container: 'map', // container ID
@@ -76,7 +119,8 @@ onMounted(() => {
     }),
   })
   sceneRef.value.on('loaded', () => {
-    fetchData()
+    loadPointText()
+    loadPointPopup()
   })
 })
 onUnmounted(() => {
