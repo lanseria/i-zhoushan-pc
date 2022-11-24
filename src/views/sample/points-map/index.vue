@@ -19,11 +19,11 @@ const loadPointText = () => {
   const pointLayer = new PointLayer({})
     .source(samplePointData)
     .shape('orgName', 'text')
-    .size(12)
+    .size(8)
     .style({
       opacity: 0.5,
-      textAnchor: 'center', // 文本相对锚点的位置 center|left|right|top|bottom|top-left
-      textOffset: [0, 0], // 文本相对锚点的偏移量 [水平, 垂直]
+      textAnchor: 'top', // 文本相对锚点的位置 center|left|right|top|bottom|top-left
+      textOffset: [0, 10], // 文本相对锚点的偏移量 [水平, 垂直]
       spacing: 2, // 字符间距
       padding: [1, 1], // 文本包围盒 padding [水平，垂直]，影响碰撞检测结果，避免相邻文本靠的太近
       stroke: '#ffffff', // 描边颜色
@@ -38,7 +38,7 @@ const loadPointPopup = () => {
   const pointLayer = new PointLayer({})
     .source(samplePointData)
     .shape('circle')
-    .size(7)
+    .size(5)
     .color('#5B8FF9')
     .active(true)
     .style({
@@ -50,6 +50,7 @@ const loadPointPopup = () => {
 
   const layerPopup = new LayerPopup({
     className: 'text-dark',
+    trigger: 'click',
     items: [
       {
         layer: pointLayer,
