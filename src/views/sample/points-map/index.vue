@@ -61,27 +61,23 @@ const loadPointCircle = () => {
       opacity: 0.3,
       strokeWidth: 1,
     })
+  const popup = new Popup({
+  })
+
+  sceneRef.value!.addPopup(popup)
   layer.on('click', (e) => {
-    const popup = new Popup(
+    popup.setOptions(
       {
         lngLat: e.lngLat,
         title: e.feature.properties.areaName,
         html: `<p>${e.feature.properties.workTime}</p>`,
 
       })
-    popup.getIsShow() ? popup.hide() : popup.show()
-    sceneRef.value!.addPopup(popup)
+  })
+  layer.on('unclick', (e) => {
+    popup.hide()
   })
   sceneRef.value && sceneRef.value.addLayer(layer)
-}
-
-const handleBounds = async () => {
-  popupLayerRef.value && popupLayerRef.value.hide()
-  sceneRef.value && sceneRef.value.removeAllLayer()
-  const bounds = mapRef.value?.getBounds()
-  await fetchData(bounds)
-  loadPointText()
-  loadPointCircle()
 }
 
 // const debounceBounds = () => {
@@ -115,8 +111,19 @@ onMounted(async () => {
     logoVisible: false,
   })
   sceneRef.value = scene
-  scene.on('zoomend', debounce(handleBounds, 3000))
-  scene.on('moveend', debounce(handleBounds, 3000))
+  async function handleBounds() {
+    const bounds = mapRef.value?.getBounds()
+    await fetchData(bounds)
+    // 防止过闪情况
+    popupLayerRef.value && popupLayerRef.value.hide()
+    sceneRef.value && sceneRef.value.removeAllLayer()
+    loadPointText()
+    loadPointCircle()
+  }
+  // 使用同一个方法可以掩盖上一次执行，不使用箭头函数
+  const d = debounce(handleBounds, 1000)
+  scene.on('zoomend', d)
+  scene.on('moveend', d)
   scene.on('loaded', handleBounds)
 })
 onUnmounted(() => {
