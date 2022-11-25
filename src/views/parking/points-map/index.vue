@@ -118,6 +118,7 @@ onMounted(async () => {
     map: new Mapbox({
       mapInstance: mapRef.value,
     }),
+    logoVisible: false,
   })
   sceneRef.value.on('loaded', () => {
     // loadPointText()

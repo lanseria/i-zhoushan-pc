@@ -48,9 +48,10 @@ export const initSamplePointQueryForm = (): SamplePointRecord => {
 }
 
 // 采样点地图
-export const querySamplePointMap = () => {
+export const querySamplePointMap = (data: any) => {
   return axios.request({
     url: '/sample/points/map',
-    method: 'GET',
+    method: 'POST',
+    data,
   })
 }

@@ -1,22 +1,25 @@
 <script lang="ts" setup>
 import mapboxgl from 'mapbox-gl'
 import MapboxLanguage from '@mapbox/mapbox-gl-language'
-// import AMapLoader from '@amap/amap-jsapi-loader'
-import { LayerPopup, PointLayer, Scene } from '@antv/l7'
+import type { LayerPopup } from '@antv/l7'
+import { PointLayer, Popup, Scene } from '@antv/l7'
 import { Mapbox } from '@antv/l7-maps'
+import { debounce } from 'lodash-es'
 import { querySamplePointMap } from '~/api/sample'
+
 const mapRef = shallowRef<mapboxgl.Map>()
 const sceneRef = shallowRef<Scene>()
+const popupLayerRef = shallowRef<LayerPopup>()
 
 let samplePointData: any[] = []
 
-const fetchData = async () => {
-  const res = await querySamplePointMap()
+const fetchData = async (params: any) => {
+  const res = await querySamplePointMap(params)
   samplePointData = res.data
 }
 
 const loadPointText = () => {
-  const pointLayer = new PointLayer({})
+  const layer = new PointLayer({ })
     .source(samplePointData)
     .shape('orgName', 'text')
     .size(8)
@@ -30,48 +33,62 @@ const loadPointText = () => {
       strokeWidth: 0.3, // 描边宽度
       strokeOpacity: 1.0,
     })
-
-  sceneRef.value && sceneRef.value.addLayer(pointLayer)
+  sceneRef.value && sceneRef.value.addLayer(layer)
 }
 
-const loadPointPopup = () => {
-  const pointLayer = new PointLayer({})
+const loadPointCircle = () => {
+  const layer = new PointLayer({})
     .source(samplePointData)
     .shape('circle')
     .size(5)
-    .color('#5B8FF9')
+    .color('serviceStatus', (value) => {
+      // ['#ef503c', '#e6a23c', '#2f9c0a', '#557c7d']
+      switch (value) {
+        case 0:
+          return '#C24740'
+        case 1:
+          return '#F3AE1A'
+        case 2:
+          return '#50C240'
+        case 3:
+          return '#BEBEBE'
+        default:
+          return '#BEBEBE'
+      }
+    })
     .active(true)
     .style({
       opacity: 0.3,
       strokeWidth: 1,
     })
-
-  sceneRef.value && sceneRef.value.addLayer(pointLayer)
-
-  const layerPopup = new LayerPopup({
-    className: 'text-dark',
-    trigger: 'click',
-    items: [
+  layer.on('click', (e) => {
+    const popup = new Popup(
       {
-        layer: pointLayer,
-        fields: [
-          {
-            field: 'orgName',
-            formatField: () => '名称',
-          }, {
-            field: 'workTime',
-            formatField: () => '工作时间',
-          },
-        ],
-      },
-    ],
-  })
+        lngLat: e.lngLat,
+        title: e.feature.properties.areaName,
+        html: `<p>${e.feature.properties.workTime}</p>`,
 
-  sceneRef.value && sceneRef.value.addPopup(layerPopup)
+      })
+    popup.getIsShow() ? popup.hide() : popup.show()
+    sceneRef.value!.addPopup(popup)
+  })
+  sceneRef.value && sceneRef.value.addLayer(layer)
 }
 
+const handleBounds = async () => {
+  popupLayerRef.value && popupLayerRef.value.hide()
+  sceneRef.value && sceneRef.value.removeAllLayer()
+  const bounds = mapRef.value?.getBounds()
+  await fetchData(bounds)
+  loadPointText()
+  loadPointCircle()
+}
+
+// const debounceBounds = () => {
+//   return
+// }
+
 onMounted(async () => {
-  await fetchData()
   mapboxgl.accessToken = 'pk.eyJ1IjoibGFuc2VyaWEiLCJhIjoiY2tzNDE4MDI0MHg5ZjJvcndtZzF4YTB6aCJ9.5k-y1Bx3km5MAOp4KVpb9g'
   mapRef.value = new mapboxgl.Map({
     container: 'map', // container ID
@@ -88,44 +105,22 @@ onMounted(async () => {
   mapRef.value.addControl(geoControl)
   mapRef.value.addControl(new MapboxLanguage({ defaultLanguage: 'zh-Hans' }))
   mapRef.value.on('click', (e: any) => {
-    console.log(e)
+    // console.log(e)
   })
-  // AMapLoader.load({
-  //   key: '8b04f44c5945851dabd1c8ae50a24a55',
-  //   version: '2.0', // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
-  //   plugins: ['AMap.ToolBar', 'AMap.Driving'], // 需要使用的的插件列表，如比例尺'AMap.Scale'等
-  // }).then((GaodeAMap) => {
-  //   map.value = new GaodeAMap.Map('map', { // 设置地图容器id
-  //     viewMode: '2D', // 是否为3D地图模式
-  //     zoom: 5, // 初始化地图级别
-  //     center: [105.602725, 37.076636], // 初始化地图中心点位置
-  //   })
-  // })
-  // const L7AMap = new GaodeMapV2({
-  //   pitch: 35.210526315789465,
-  //   style: 'dark',
-  //   center: [104.288144, 31.239692],
-  //   zoom: 4.4,
-  //   token: '8b04f44c5945851dabd1c8ae50a24a55',
-  //   plugin: ['AMap.ToolBar', 'AMap.LineSearch'],
-  // })
-  // const scene = new Scene({
-  //   id: 'map',
-  //   map: L7AMap,
-  // })
-  sceneRef.value = new Scene({
+  const scene = new Scene({
     id: 'map',
     map: new Mapbox({
       mapInstance: mapRef.value,
     }),
+    logoVisible: false,
   })
-  sceneRef.value.on('loaded', () => {
-    loadPointText()
-    loadPointPopup()
-  })
+  sceneRef.value = scene
+  scene.on('zoomend', debounce(handleBounds, 3000))
+  scene.on('moveend', debounce(handleBounds, 3000))
+  scene.on('loaded', handleBounds)
 })
 onUnmounted(() => {
-  mapRef.value && mapRef.value.remove()
+  sceneRef.value?.destroy()
 })
 </script>
 
