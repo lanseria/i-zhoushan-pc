@@ -3,10 +3,10 @@ lockfileVersion: 5.4
 specifiers:
   '@amap/amap-jsapi-loader': ^1.0.1
   '@antfu/eslint-config': ^0.29.4
-  '@antv/l7': ^2.11.1
+  '@antv/l7': ^2.11.2
   '@antv/l7-draw': ^3.0.9
-  '@antv/l7-maps': ^2.11.1
-  '@arco-design/web-vue': ^2.39.0
+  '@antv/l7-maps': ^2.11.2
+  '@arco-design/web-vue': ^2.39.1
   '@iconify-json/carbon': ^1.1.11
   '@mapbox/mapbox-gl-language': ^1.0.0
   '@types/crypto-js': ^4.1.1
@@ -29,7 +29,7 @@ specifiers:
   mitt: ^3.0.0
   mockjs: ^1.1.0
   nprogress: ^0.2.0
-  pinia: ^2.0.26
+  pinia: ^2.0.27
   query-string: ^7.1.1
   taze: ^0.8.4
   typescript: ^4.9.3
@@ -40,14 +40,14 @@ specifiers:
   vue: ^3.2.45
   vue-echarts: ^6.2.3
   vue-router: ^4.1.6
-  vue-tsc: ^1.0.9
+  vue-tsc: ^1.0.10
 
 dependencies:
   '@amap/amap-jsapi-loader': 1.0.1
-  '@antv/l7': 2.11.1
-  '@antv/l7-draw': 3.0.9_@antv+l7@2.11.1
-  '@antv/l7-maps': 2.11.1
-  '@arco-design/web-vue': 2.39.0_vue@3.2.45
+  '@antv/l7': 2.11.2
+  '@antv/l7-draw': 3.0.9_@antv+l7@2.11.2
+  '@antv/l7-maps': 2.11.2
+  '@arco-design/web-vue': 2.39.1_vue@3.2.45
   '@mapbox/mapbox-gl-language': 1.0.0_mapbox-gl@2.11.0
   '@vueuse/core': 9.6.0_vue@3.2.45
   axios: 1.2.0
@@ -58,7 +58,7 @@ dependencies:
   mapbox-gl: 2.11.0
   mitt: 3.0.0
   nprogress: 0.2.0
-  pinia: 2.0.26_mgnvym7yiazkylwwogi5r767ue
+  pinia: 2.0.27_mgnvym7yiazkylwwogi5r767ue
   query-string: 7.1.1
   vue: 3.2.45
   vue-echarts: 6.2.3_echarts@5.4.0+vue@3.2.45
@@ -84,7 +84,7 @@ devDependencies:
   unplugin-auto-import: 0.11.5_@vueuse+core@9.6.0
   unplugin-vue-components: 0.22.11_vue@3.2.45
   vite: 3.2.4_7vtinn62abiso75mrh4rovi32i
-  vue-tsc: 1.0.9_typescript@4.9.3
+  vue-tsc: 1.0.10_typescript@4.9.3
 
 packages:
 
@@ -212,11 +212,11 @@ packages:
       async: 3.2.4
     dev: false
 
-  /@antv/l7-component/2.11.1:
-    resolution: {integrity: sha512-d/EQfFF81gb50jjLppgWbFdTTDRhPCxCoPeDpTspZMJpq7W78VX89tI12Ig6Kmk+a1rWzrfO5JeIHRk7sge1sg==}
+  /@antv/l7-component/2.11.2:
+    resolution: {integrity: sha512-fwcUHYEC/q4D3ahekpUnpGGFqvlp50Ff5ErDoDGubVt/cx8LJ0dWQSLdL8Di+/B82aQK5NgB/FifkHBCrILAZA==}
     dependencies:
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       eventemitter3: 4.0.7
       inversify: 5.1.1
@@ -225,11 +225,11 @@ packages:
       supercluster: 7.1.5
     dev: false
 
-  /@antv/l7-core/2.11.1:
-    resolution: {integrity: sha512-HfN1AGl4BDLj+kyMR/xOhia1dnGZ7r3CnP1XWoHz8XBF5iCg02SUlGyONF9JM6NV/iRkXdek+hYYFV43qXTv5w==}
+  /@antv/l7-core/2.11.2:
+    resolution: {integrity: sha512-0Olcu30w/hqH73EcAPjDQHyP275KY/frchwG8o0FVKaduHnLRFONobZagc17JFtzixttYq2MAsH0i1HMowyQxw==}
     dependencies:
       '@antv/async-hook': 2.2.9
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       '@turf/helpers': 6.5.0
       ajv: 6.12.6
@@ -245,12 +245,12 @@ packages:
       viewport-mercator-project: 6.2.3
     dev: false
 
-  /@antv/l7-draw/3.0.9_@antv+l7@2.11.1:
+  /@antv/l7-draw/3.0.9_@antv+l7@2.11.2:
     resolution: {integrity: sha512-5ntKJ9Dt18h8g8GMq0UbCGKeKeW3HPcVk7P3YBRgv1l6fzVCaLT92VOkxZihGRgrHE9uK9Q6b1ctx83TSye2sg==}
     peerDependencies:
       '@antv/l7': ^2.8.35
     dependencies:
-      '@antv/l7': 2.11.1
+      '@antv/l7': 2.11.2
       '@turf/turf': 6.5.0
       eventemitter3: 4.0.7
       lodash: 4.17.21
@@ -261,14 +261,14 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@antv/l7-layers/2.11.1:
-    resolution: {integrity: sha512-TMr31g+VcXKdKWWqV13fWLsLyOz5kug0cE3FTDP42dH5HAGX3J3aGClW4bA7BySFw+MTaSt1wstowmtZMxGAVw==}
+  /@antv/l7-layers/2.11.2:
+    resolution: {integrity: sha512-UROxERnhbFRqmuZD/AEhusU8YOQP2FpzQUcSWr5vC1KDBh7y18fcZv8BwPKGddBI+ZyArGfpbbvOJwGZsmxrlw==}
     dependencies:
       '@antv/async-hook': 2.2.9
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-maps': 2.11.1
-      '@antv/l7-source': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-maps': 2.11.2
+      '@antv/l7-source': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       '@mapbox/martini': 0.2.0
       '@turf/clone': 6.5.0
@@ -291,10 +291,10 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@antv/l7-map/2.11.1:
-    resolution: {integrity: sha512-bOvnJJD6iK0cT6FtjNsKcIAlGlmywJ8bd9E42bI1Dz7AsLZonyo83+5cL/up0QWTk73oQN8YRpPiCqm6owZFRQ==}
+  /@antv/l7-map/2.11.2:
+    resolution: {integrity: sha512-yjtR8cM3ElcRqBp4PnnCJReaYpg0pkb09fh7xSJWgjXVSnzYGjRCHLdr0bvM5H/KKUad/jOyhIdvv9mPOaiuEw==}
     dependencies:
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       '@mapbox/point-geometry': 0.1.0
       '@mapbox/unitbezier': 0.0.0
@@ -303,13 +303,13 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /@antv/l7-maps/2.11.1:
-    resolution: {integrity: sha512-jpizlt6ioUX1xScviyXqVPUTOblzjvi06pYsHcDPDyBGaKAU3UEAQCXVsgS/QvtI2VckzYJ/7DIs5jMhbWmxJA==}
+  /@antv/l7-maps/2.11.2:
+    resolution: {integrity: sha512-mlhudPOGeeumJFaIrKZ/QTY3TGCMEDVxrVjsr9TJsvuoDpKlxve3pkOB0+sB8TnU+QH8ge1JLFK+ztLp/WqPWA==}
     dependencies:
       '@amap/amap-jsapi-loader': 1.0.1
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-map': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-map': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       '@types/amap-js-api': 1.4.10
       '@types/mapbox-gl': 1.13.4
@@ -320,11 +320,11 @@ packages:
       viewport-mercator-project: 6.2.3
     dev: false
 
-  /@antv/l7-renderer/2.11.1:
-    resolution: {integrity: sha512-/1/NfIKfADiqY3wnzu5c3u385hsAeD7gNSoguEt2glu3MiZxwUGufU6in57BLMS2vQJAgNTcoLr+2uhq2+DFkw==}
+  /@antv/l7-renderer/2.11.2:
+    resolution: {integrity: sha512-Sd/ro7foz9qvWA3+Ex9JF3D5t7+2EuFxN2c++0z8s9OXqSnLAohffblVKygbxMSG+wAKRsEdXTfSDmv9PCrqPg==}
     dependencies:
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       inversify: 5.1.1
       l7regl: 0.0.20
@@ -332,15 +332,15 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@antv/l7-scene/2.11.1:
-    resolution: {integrity: sha512-yvpfJ7MeZpTyzGLSOg6QBiiKFZl67t0XZsG5Y0TNwF6Ofms0X2z/JNF8oZcQYJecQunBYSbLiRvRmbc1lPaJXQ==}
+  /@antv/l7-scene/2.11.2:
+    resolution: {integrity: sha512-irZzW6G4CdJ4lsLdTHkG5oxtPD/wq4F6OPa1F2t1WFX7z9g3/o1zidmyEDNdE1/zF+z8OCvngyDWB6I/0WZN6g==}
     dependencies:
-      '@antv/l7-component': 2.11.1
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-layers': 2.11.1
-      '@antv/l7-maps': 2.11.1
-      '@antv/l7-renderer': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-component': 2.11.2
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-layers': 2.11.2
+      '@antv/l7-maps': 2.11.2
+      '@antv/l7-renderer': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       eventemitter3: 4.0.7
       inversify: 5.1.1
@@ -348,12 +348,12 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@antv/l7-source/2.11.1:
-    resolution: {integrity: sha512-FWYwjLfD+FGpxOCGYTtInGbXu/InULihdfjVMIVOumtRTilR449Hdu2GbCM+Vr9IVHSQsq1qYQ1uupstPHqTOA==}
+  /@antv/l7-source/2.11.2:
+    resolution: {integrity: sha512-3ZakdmayHuVFeEcIYzGLHDPqOmYrG7zE80r2wCdLNZtOAY+frRQciSJ/Nc6ZodwVi4NYIae6AiQLEtyPsfc9XA==}
     dependencies:
       '@antv/async-hook': 2.2.9
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/vector-tile': 1.3.1
@@ -371,8 +371,8 @@ packages:
       supercluster: 7.1.5
     dev: false
 
-  /@antv/l7-utils/2.11.1:
-    resolution: {integrity: sha512-34GwtGfVxNN/EBDnFzgBlVsERVFVxCjl13NrpbuA31HPmXYNEWkPUdhBYHB9O826rDbJgbkomaZI+EyS2EE0xQ==}
+  /@antv/l7-utils/2.11.2:
+    resolution: {integrity: sha512-9m2QSyaYpk+iCDj57qtfBinqBjJpWGOnyQiTSpgyVME/X+4OCJe5LuHwXvKOkd0q6qoHeX6E47BSfXHp7HY3IQ==}
     dependencies:
       '@babel/runtime': 7.20.1
       '@turf/bbox': 6.5.0
@@ -386,16 +386,16 @@ packages:
       web-worker-helper: 0.0.3
     dev: false
 
-  /@antv/l7/2.11.1:
-    resolution: {integrity: sha512-iiPlk48bw94eSt4Xn9UF00yMRHYl55a+b0ee9JEJ+lRrkThKs+eDoNGEuRS0FD/RAUCQZX5qvDQSrdqEo6ASLA==}
+  /@antv/l7/2.11.2:
+    resolution: {integrity: sha512-lvOfzbsY61vA0fTogUU3m5XBRwm2/m84vlO9aThLzpBhUQmd+oE8Sa2YgAlBkIPYT7qOi+aMjuPHKwlUZIZF7Q==}
     dependencies:
-      '@antv/l7-component': 2.11.1
-      '@antv/l7-core': 2.11.1
-      '@antv/l7-layers': 2.11.1
-      '@antv/l7-maps': 2.11.1
-      '@antv/l7-scene': 2.11.1
-      '@antv/l7-source': 2.11.1
-      '@antv/l7-utils': 2.11.1
+      '@antv/l7-component': 2.11.2
+      '@antv/l7-core': 2.11.2
+      '@antv/l7-layers': 2.11.2
+      '@antv/l7-maps': 2.11.2
+      '@antv/l7-scene': 2.11.2
+      '@antv/l7-source': 2.11.2
+      '@antv/l7-utils': 2.11.2
       '@babel/runtime': 7.20.1
     dev: false
 
@@ -405,8 +405,8 @@ packages:
       color: 3.2.1
     dev: false
 
-  /@arco-design/web-vue/2.39.0_vue@3.2.45:
-    resolution: {integrity: sha512-ozSgF3Ij1crYXQOun/6yQfzzrTXlg5/lV7nfAGUWsP06SoQqw+akvpylAvfduJuKcbBq45Rks3ciA7OEbe4e2A==}
+  /@arco-design/web-vue/2.39.1_vue@3.2.45:
+    resolution: {integrity: sha512-kQSYN4CeyUShbuEf2n4hO9NTIBpma8aE/455ddINmnVh+dFrnZ6Hc8Lkh5qTlFN7ky4vCs8oiJqZMNmzxvX72Q==}
     peerDependencies:
       vue: ^3.1.0
     dependencies:
@@ -2151,7 +2151,7 @@ packages:
   /@types/acorn/4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 0.0.41
     dev: false
 
   /@types/amap-js-api/1.4.10:
@@ -2168,6 +2168,7 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
+    dev: true
 
   /@types/geojson/7946.0.10:
     resolution: {integrity: sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==}
@@ -2611,44 +2612,44 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@volar/language-core/1.0.9:
-    resolution: {integrity: sha512-5Fty3slLet6svXiJw2YxhYeo6c7wFdtILrql5bZymYLM+HbiZtJbryW1YnUEKAP7MO9Mbeh+TNH4Z0HFxHgIqw==}
+  /@volar/language-core/1.0.10:
+    resolution: {integrity: sha512-7WNzjvdUXjggEZvYu9EInABl4mvXtyiiaJDOJM+plHJT7xW5voLja0BrYYji6TUn8Q4HakLvTPpQddPLq134mg==}
     dependencies:
-      '@volar/source-map': 1.0.9
-      '@vue/reactivity': 3.2.41
+      '@volar/source-map': 1.0.10
+      '@vue/reactivity': 3.2.45
       muggle-string: 0.1.0
     dev: true
 
-  /@volar/source-map/1.0.9:
-    resolution: {integrity: sha512-fazB/vy5ZEJ3yKx4fabJyGNI3CBkdLkfEIRVu6+1P3VixK0Mn+eqyUIkLBrzGYaeFM3GybhCLCvsVdNz0Fu/CQ==}
+  /@volar/source-map/1.0.10:
+    resolution: {integrity: sha512-jSZW1tfsvAOHlpoRy14zH9sdCYR4g8QcnCXRli8juFC2UHoVzVRKB6VdnXcx5wRAlIRXoiBpsU+pKminryKEBw==}
     dependencies:
       muggle-string: 0.1.0
     dev: true
 
-  /@volar/typescript/1.0.9:
-    resolution: {integrity: sha512-dVziu+ShQUWuMukM6bvK2v2O446/gG6l1XkTh2vfkccw1IzjfbiP1TWQoNo1ipTfZOtu5YJGYAx+o5HNrGXWfQ==}
+  /@volar/typescript/1.0.10:
+    resolution: {integrity: sha512-Nd+u2Z2P1V+KiNBMLLK6wV4sswOOYBsjEHmgK29eENXtos1+gF2GWB908vvwmT75dmCtlYZ8No14lvCqXUAVdg==}
     dependencies:
-      '@volar/language-core': 1.0.9
+      '@volar/language-core': 1.0.10
     dev: true
 
-  /@volar/vue-language-core/1.0.9:
-    resolution: {integrity: sha512-tofNoR8ShPFenHT1YVMuvoXtXWwoQE+fiXVqSmW0dSKZqEDjWQ3YeXSd0a6aqyKaIbvR7kWWGp34WbpQlwf9Ww==}
+  /@volar/vue-language-core/1.0.10:
+    resolution: {integrity: sha512-m7pYXGwkpF9Bmuud73kGlAX31QUTwifYbgCenaqm3hGNh+SJebSkxzk4NJvabiGbA6ON3b5ayQZ/rbOEtdoghw==}
     dependencies:
-      '@volar/language-core': 1.0.9
-      '@volar/source-map': 1.0.9
+      '@volar/language-core': 1.0.10
+      '@volar/source-map': 1.0.10
       '@vue/compiler-dom': 3.2.45
       '@vue/compiler-sfc': 3.2.45
-      '@vue/reactivity': 3.2.41
+      '@vue/reactivity': 3.2.45
       '@vue/shared': 3.2.45
       minimatch: 5.1.0
-      vue-template-compiler: 2.7.13
+      vue-template-compiler: 2.7.14
     dev: true
 
-  /@volar/vue-typescript/1.0.9:
-    resolution: {integrity: sha512-ZLe4y9YNbviACa7uAMCilzxA76gbbSlKfjspXBzk6fCobd8QCIig+VyDYcjANIlm2HhgSCX8jYTzhCKlegh4mw==}
+  /@volar/vue-typescript/1.0.10:
+    resolution: {integrity: sha512-GjQ+mfIUljXGfkTmNrfNT8YYQY48mcOE5SJ190o6ENArzH9cqjmvPLo1nrdurbZOFwztwEDNye5N1/5aL9sZ1g==}
     dependencies:
-      '@volar/typescript': 1.0.9
-      '@volar/vue-language-core': 1.0.9
+      '@volar/typescript': 1.0.10
+      '@volar/vue-language-core': 1.0.10
     dev: true
 
   /@vue/babel-helper-vue-transform-on/1.0.2:
@@ -2719,12 +2720,6 @@ packages:
       estree-walker: 2.0.2
       magic-string: 0.25.9
 
-  /@vue/reactivity/3.2.41:
-    resolution: {integrity: sha512-9JvCnlj8uc5xRiQGZ28MKGjuCoPhhTwcoAdv3o31+cfGgonwdPNuvqAXLhlzu4zwqavFEG5tvaoINQEfxz+l6g==}
-    dependencies:
-      '@vue/shared': 3.2.41
-    dev: true
-
   /@vue/reactivity/3.2.45:
     resolution: {integrity: sha512-PRvhCcQcyEVohW0P8iQ7HDcIOXRjZfAsOds3N99X/Dzewy8TVhTCT4uXpAHfoKjVTJRA0O0K+6QNkDIZAxNi3A==}
     dependencies:
@@ -2751,10 +2746,6 @@ packages:
       '@vue/compiler-ssr': 3.2.45
       '@vue/shared': 3.2.45
       vue: 3.2.45
-
-  /@vue/shared/3.2.41:
-    resolution: {integrity: sha512-W9mfWLHmJhkfAmV+7gDjcHeAWALQtgGT3JErxULl0oz6R6+3ug91I7IErs93eCFhPCZPHBs4QJS7YWEV7A3sxw==}
-    dev: true
 
   /@vue/shared/3.2.45:
     resolution: {integrity: sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==}
@@ -5858,8 +5849,8 @@ packages:
     dev: true
     optional: true
 
-  /pinia/2.0.26_mgnvym7yiazkylwwogi5r767ue:
-    resolution: {integrity: sha512-tSxZNUcMGxQOvKZRjPKXxd2+/2NZhRF/CoYVE/+K6uE/Z3v1Oi4fcQFpxu5nMB1dCchjXUZ+lz0tBxV5ntwmQQ==}
+  /pinia/2.0.27_mgnvym7yiazkylwwogi5r767ue:
+    resolution: {integrity: sha512-nOnXP0OFeL8R4WjAHsterU+11vptda643gH02xKNtSCDPiRzVfRYodOLihLDoa0gL1KKuQKV+KOzEgdt3YvqEw==}
     peerDependencies:
       '@vue/composition-api': ^1.4.0
       typescript: '>=4.4.4'
@@ -6927,21 +6918,21 @@ packages:
       vue: 3.2.45
     dev: false
 
-  /vue-template-compiler/2.7.13:
-    resolution: {integrity: sha512-jYM6TClwDS9YqP48gYrtAtaOhRKkbYmbzE+Q51gX5YDr777n7tNI/IZk4QV4l/PjQPNh/FVa/E92sh/RqKMrog==}
+  /vue-template-compiler/2.7.14:
+    resolution: {integrity: sha512-zyA5Y3ArvVG0NacJDkkzJuPQDF8RFeRlzV2vLeSnhSpieO6LK2OVbdLPi5MPPs09Ii+gMO8nY4S3iKQxBxDmWQ==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
     dev: true
 
-  /vue-tsc/1.0.9_typescript@4.9.3:
-    resolution: {integrity: sha512-vRmHD1K6DmBymNhoHjQy/aYKTRQNLGOu2/ESasChG9Vy113K6CdP0NlhR0bzgFJfv2eFB9Ez/9L5kIciUajBxQ==}
+  /vue-tsc/1.0.10_typescript@4.9.3:
+    resolution: {integrity: sha512-o6ek6ZSDwpVWn7/ZXlIILfCZ18o7ypEYKMDynsyPj9m10/ALXkCLKIj9yVfx00QAX5Z/hKrdhYcA2ZaQ0+U7Kg==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@volar/vue-language-core': 1.0.9
-      '@volar/vue-typescript': 1.0.9
+      '@volar/vue-language-core': 1.0.10
+      '@volar/vue-typescript': 1.0.10
       typescript: 4.9.3
     dev: true
 
